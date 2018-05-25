@@ -71,8 +71,8 @@ public class MainActivity extends AppCompatActivity {
 
         float salario_base = 2000, valor_extra, valor_falta, valor_filhos, valor_inss, valor_proventos, valor_descontos, salario_liquido;
 
-        valor_extra = (salario_base/240)*2;
-        valor_falta = (salario_base/30);
+        valor_extra = ((salario_base/240)*2)*total_horas;
+        valor_falta = (salario_base/30)*total_faltas;
         valor_filhos = ((salario_base*3)/100) * total_filhos;
 
         valor_proventos = salario_base + valor_extra + valor_filhos;
@@ -97,8 +97,8 @@ public class MainActivity extends AppCompatActivity {
 
         float salario_base = 900, valor_extra, valor_falta, valor_filhos, valor_inss, valor_proventos, valor_descontos, salario_liquido;
 
-        valor_extra = (salario_base/240)*2;
-        valor_falta = (salario_base/30);
+        valor_extra = ((salario_base/240)*2)*total_horas;
+        valor_falta = (salario_base/30)*total_faltas;
         valor_filhos = ((salario_base*3)/100) * total_filhos;
 
         valor_proventos = salario_base + valor_extra + valor_filhos;
@@ -123,8 +123,8 @@ public class MainActivity extends AppCompatActivity {
 
         float salario_base = 300, valor_extra, valor_falta, valor_filhos, valor_inss, valor_proventos, valor_descontos, salario_liquido;
 
-        valor_extra = (salario_base/240)*2;
-        valor_falta = (salario_base/30);
+        valor_extra = ((salario_base/240)* 2) * total_horas;
+        valor_falta = (salario_base/30) * total_faltas;
         valor_filhos = ((salario_base*3)/100) * total_filhos;
 
         valor_proventos = salario_base + valor_extra + valor_filhos;
