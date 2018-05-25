@@ -76,7 +76,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:text="Informe o número de horas trabalhadas:"
+        android:text="Informe o número de horas extras trabalhadas:"
         android:textSize="18sp"
         android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"

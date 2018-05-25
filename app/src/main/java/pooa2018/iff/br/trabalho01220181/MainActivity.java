@@ -39,14 +39,15 @@ public class MainActivity extends AppCompatActivity {
                     boolean checked = ((RadioButton) view).isChecked();
 
                     switch(view.getId()) {
-                        case R.id.radio_Supervisor:
-                            if (checked)
-                                calcularSupervisor();
-                                break;
+
                         case R.id.radio_Gerente:
                             if (checked)
                                 calcularGerente();
                                 break;
+                        case R.id.radio_Supervisor:
+                            if (checked)
+                                calcularSupervisor();
+                            break;
                         case R.id.radio_Servente:
                             if (checked)
                                 calcularServente();
@@ -57,18 +58,22 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void calcularSupervisor(){
+
+
+    private void calcularGerente(){
 
         float total_horas = Float.parseFloat(txtHoras.getText().toString());
         int total_faltas = Integer.parseInt(txtFaltas.getText().toString());
         int total_filhos = Integer.parseInt(txtFilhos.getText().toString());
+
+        float salario_base = 2000;
 
 
 
 
     }
 
-    private void calcularGerente(){
+    private void calcularSupervisor(){
 
         float total_horas = Float.parseFloat(txtHoras.getText().toString());
         int total_faltas = Integer.parseInt(txtFaltas.getText().toString());
