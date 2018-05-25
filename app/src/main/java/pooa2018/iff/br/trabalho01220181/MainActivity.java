@@ -45,15 +45,15 @@ public class MainActivity extends AppCompatActivity {
 
                         case R.id.radio_Gerente:
                             if (checked)
-                                calcularGerente();
+                                calcular(2000);
                                 break;
                         case R.id.radio_Supervisor:
                             if (checked)
-                                calcularSupervisor();
+                                calcular(900);
                             break;
                         case R.id.radio_Servente:
                             if (checked)
-                                calcularServente();
+                                calcular(300);
                             break;
                     }
                 }
@@ -63,13 +63,13 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    private void calcularGerente(){
+    private void calcular(float salario_base){
 
         float total_horas = Float.parseFloat(txtHoras.getText().toString());
         int total_faltas = Integer.parseInt(txtFaltas.getText().toString());
         int total_filhos = Integer.parseInt(txtFilhos.getText().toString());
 
-        float salario_base = 2000, valor_extra, valor_falta, valor_filhos, valor_inss, valor_proventos, valor_descontos, salario_liquido;
+        float valor_extra, valor_falta, valor_filhos, valor_inss, valor_proventos, valor_descontos, salario_liquido;
 
         valor_extra = ((salario_base/240)*2)*total_horas;
         valor_falta = (salario_base/30)*total_faltas;
@@ -89,56 +89,4 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void calcularSupervisor(){
-
-        float total_horas = Float.parseFloat(txtHoras.getText().toString());
-        int total_faltas = Integer.parseInt(txtFaltas.getText().toString());
-        int total_filhos = Integer.parseInt(txtFilhos.getText().toString());
-
-        float salario_base = 900, valor_extra, valor_falta, valor_filhos, valor_inss, valor_proventos, valor_descontos, salario_liquido;
-
-        valor_extra = ((salario_base/240)*2)*total_horas;
-        valor_falta = (salario_base/30)*total_faltas;
-        valor_filhos = ((salario_base*3)/100) * total_filhos;
-
-        valor_proventos = salario_base + valor_extra + valor_filhos;
-
-        valor_inss = (valor_proventos*10)/100;
-        valor_descontos = (valor_falta + valor_inss);
-
-        salario_liquido = (valor_proventos - valor_descontos);
-
-        String mensagem = "O valor total de PROVENTOS é de R$"+valor_proventos+". \nO valor total de DESCONTOS é de R$"+valor_descontos+".\n Ovalor finall do SALÁRIO LÍQUIDO é de R$"+salario_liquido+".";
-
-        txtResultado.setText(String.valueOf(mensagem));
-
-
     }
-
-    private void calcularServente(){
-
-        float total_horas = Float.parseFloat(txtHoras.getText().toString());
-        int total_faltas = Integer.parseInt(txtFaltas.getText().toString());
-        int total_filhos = Integer.parseInt(txtFilhos.getText().toString());
-
-        float salario_base = 300, valor_extra, valor_falta, valor_filhos, valor_inss, valor_proventos, valor_descontos, salario_liquido;
-
-        valor_extra = ((salario_base/240)* 2) * total_horas;
-        valor_falta = (salario_base/30) * total_faltas;
-        valor_filhos = ((salario_base*3)/100) * total_filhos;
-
-        valor_proventos = salario_base + valor_extra + valor_filhos;
-
-        valor_inss = (valor_proventos*10)/100;
-        valor_descontos = (valor_falta + valor_inss);
-
-        salario_liquido = (valor_proventos - valor_descontos);
-
-        String mensagem = "O valor total de PROVENTOS é de R$"+valor_proventos+". \nO valor total de DESCONTOS é de R$"+valor_descontos+".\n Ovalor finall do SALÁRIO LÍQUIDO é de R$"+salario_liquido+".";
-
-        txtResultado.setText(String.valueOf(mensagem));
-
-
-    }
-
-}
